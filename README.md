@@ -6,4 +6,6 @@ e mostro os itens, os preços de cada item e os itens que podem ser feitos apart
 
 
 Segue uma imagem do app:
+
+
 ![app_lol](https://user-images.githubusercontent.com/42045058/98468756-b1780a80-21ba-11eb-9871-45847494809c.PNG)
