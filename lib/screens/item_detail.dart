@@ -18,7 +18,13 @@ class ItemDetail extends StatelessWidget {
     });
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(52, 52, 52, 1),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Image.asset(
+          'assets/images/logo2.png',
+          height: 55,
+        ),
+      ),
       body: _body(),
     );
   }
@@ -37,13 +43,18 @@ class ItemDetail extends StatelessWidget {
               utf8.decode(item.name.codeUnits),
               style: TextStyle(
                 color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: 20)),
-            Text(
-              utf8.decode(item.description.codeUnits),
-              style: TextStyle(
-                color: Colors.grey,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                utf8.decode(item.description.codeUnits),
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
             Divider(
@@ -54,20 +65,17 @@ class ItemDetail extends StatelessWidget {
                 itemCount: itensCompostos.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 0,
+                  mainAxisSpacing: 0,
                 ),
                 itemBuilder: (context, index) {
                   return FadeInImage.memoryNetwork(
-                          placeholder: kTransparentImage,
-                          image: itensCompostos[index],
-                          width: 150,
-                          height: 150,
-                          fit: BoxFit.scaleDown,
-                        );
-                      
-                    
-                  
+                    placeholder: kTransparentImage,
+                    image: itensCompostos[index],
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.scaleDown,
+                  );
                 },
               ),
             ),
